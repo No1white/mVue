@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{msg}}
+			<span>{{person.name}}</span>
+			</p>
+			<div class="haha">
+				
+				<div v-text="msg"></div>
+				<div >
+				<div v-text="person.age"></div>	
+				</div>
+				<p v-html="msg"></p>
+			</div>
+			<!-- <a v-bind:href="msg">aaa</a> -->
+				<input type='text' v-model="msg"></div>
+			<p v-html="hText"></p>
+				<!-- <input type='text' v-model="person.name"></div> -->
+			
+			<div v-on:click="handleClick">click</div>
+			<!-- <button @click="handleClick">点击</button> -->
+			<p></p>
+		
+			
+		</div>
+	</body>
+
+	<script src="js/compileUtils.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/Observer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Compile.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="js/mVue.js" type="text/javascript" charset="utf-8"></script>
+	<!-- <script src="js/Observer2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/mVue2.js" type="text/javascript" charset="utf-8"></script> -->
+	<script type="text/javascript">
+		let vm = new mVue({
+			el:'#app',
+			data:{
+				msg:'haha',
+				hText:'<h1>123</h1>',
+				message:'hehe',
+				person: {
+					name:'zhangsan',
+					age:'18',
+				}
+			},
+			methods: {
+				handleClick() {
+					console.log("1");
+					console.log(this.person.name);
+				}
+			}
+		})
+	</script>
+</html>
